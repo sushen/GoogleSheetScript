@@ -1,0 +1,69 @@
+// example of Creat Value and Set One Cell Value To Other
+// Follow by the example of tutorials https://youtu.be/aPJ-2U45BpA
+
+function HMS_Apps() {
+  
+  var app = SpreadsheetApp;
+  var ss = app.getActiveSpreadsheet();
+  var activeSheet = ss.getActiveSheet();
+
+  var NameOftheApps = activeSheet.getRange("D3").setValue("Human Migration Services");
+  var AppsCreator = activeSheet.getRange("D4").setValue("Sushen Biswas");
+  
+  var CoprRight = activeSheet.getRange("D3").getValue();
+  activeSheet.getRange("G33").setValue(CoprRight);
+  
+}
+
+
+// example of how to make index and how to take one cell value and add extra value to it and write the value to other cell 
+// Follow by the example of tutorials https://youtu.be/IcLBkJYP6Pk
+
+function HMS_index() {
+  
+  var app = SpreadsheetApp;
+  var activeSheet = app.getActiveSpreadsheet().getActiveSheet();
+  
+  // How to Make Index usinf loop
+  for(var i=0; i<11; i++){
+    // i+8 means take the value from row 8 
+    var index = activeSheet.getRange(i+8, 1).getValue();
+    index = index + 1;
+    // i+9 means the value I get from i+8 we just set the value in row 9
+    // thats how I creat a index thats not show in tutorials 
+    activeSheet.getRange(i+9, 1).setValue(index);
+      
+    }      
+      
+}
+
+// below Two Function is about calcluting percentise 
+// I will use it to calclute profite of Bitcoin
+// Follow by the example of tutorials https://youtu.be/IcLBkJYP6Pk
+
+function HMS_WriteNumber() {  
+  var app = SpreadsheetApp;
+  var activeSheet = app.getActiveSpreadsheet().getActiveSheet();
+  
+  for(var i=0; i<4; i++){    
+    var index = activeSheet.getRange(i+8, 1).getValue();
+    index = index + 10 ;
+    activeSheet.getRange(i+9, 1).setValue(index);
+      
+    }      
+}
+function HMS_AddPercentise() {  
+  var app = SpreadsheetApp;
+  var activeSheet = app.getActiveSpreadsheet().getActiveSheet();
+  
+  for(var i=0; i<5; i++){    
+    var index = activeSheet.getRange(i+8, 1).getValue();
+    index = index * .1 ;
+    activeSheet.getRange(i+8, 2).setValue(index);
+      
+    }      
+}
+
+
+
+
